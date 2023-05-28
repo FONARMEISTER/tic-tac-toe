@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">my-tic-tac-toe</string>
+    <string name="start_game_string">Играть!</string>
+    <string name="score_string">Счет</string>
+    <string name="confirm_player_button">Подтвердить</string>
+    <string name="confirm_player1_text">Имя первого игрока</string>
+    <string name="confirm_player2_text">Имя второго игрока</string>
+    <string name="refresh_field">Обновить</string>
+    <string name="start_new_game">Новая игра</string>
+</resources>

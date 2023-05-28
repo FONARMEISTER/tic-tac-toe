@@ -43,7 +43,7 @@
                 <ImageButton
                     android:id="@+id/Player0Avatar"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="300dp"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
@@ -70,8 +70,8 @@
 
                 <ImageButton
                     android:id="@+id/Player1Avatar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
