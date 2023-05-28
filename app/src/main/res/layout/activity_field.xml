@@ -14,11 +14,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="110dp"
+            android:layout_height="75dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="190dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:orientation="vertical"
@@ -39,6 +41,7 @@
 
             <LinearLayout
                 android:layout_width="190dp"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:orientation="vertical"
@@ -63,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:paddingTop="100dp">
+            android:paddingTop="10dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -72,18 +75,21 @@
 
                 <Button
                     android:id="@+id/b0"
-                    android:layout_width="110dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp"
                     android:text="" />
 
                 <Button
                     android:id="@+id/b1"
-                    android:layout_width="110dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp" />
 
                 <Button
                     android:id="@+id/b2"
-                    android:layout_width="110dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp" />
             </TableRow>
 
@@ -94,17 +100,20 @@
 
                 <Button
                     android:id="@+id/b3"
-                    android:layout_width="110dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp" />
 
                 <Button
                     android:id="@+id/b4"
-                    android:layout_width="110dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp" />
 
                 <Button
                     android:id="@+id/b5"
-                    android:layout_width="110dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp" />
             </TableRow>
 
@@ -115,17 +124,20 @@
 
                 <Button
                     android:id="@+id/b6"
-                    android:layout_width="110dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp" />
 
                 <Button
                     android:id="@+id/b7"
-                    android:layout_width="110dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp" />
 
                 <Button
                     android:id="@+id/b8"
-                    android:layout_width="110dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
                     android:layout_height="110dp" />
             </TableRow>
 
@@ -136,11 +148,13 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:padding="20dp"
+            android:layout_weight="1"
             android:text="@string/start_new_game"
             android:layout_margin="@android:dimen/app_icon_size"/>
 
         <Button
             android:id="@+id/refreshButton"
+            android:layout_weight="1"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="@string/refresh_field"
