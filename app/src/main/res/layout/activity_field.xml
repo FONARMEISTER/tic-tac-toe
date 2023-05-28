@@ -25,17 +25,15 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/Player1Name"
+                    android:id="@+id/Player0Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Player 1"
                     android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/Player1Score"
+                    android:id="@+id/Player0Score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:gravity="center"/>
             </LinearLayout>
 
@@ -47,17 +45,15 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/Player2Name"
+                    android:id="@+id/Player1Name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Player 2"
                     android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/Player2Score"
+                    android:id="@+id/Player1Score"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="0"
                     android:gravity="center"/>
 
             </LinearLayout>
@@ -136,7 +132,7 @@
         </TableLayout>
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/newGameButton"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:padding="20dp"
@@ -144,10 +140,11 @@
             android:layout_margin="@android:dimen/app_icon_size"/>
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/refreshButton"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="@string/refresh_field"
+            android:visibility="invisible"
             android:padding="20dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

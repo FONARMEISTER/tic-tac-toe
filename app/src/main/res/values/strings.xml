@@ -3,8 +3,8 @@
     <string name="start_game_string">Play!</string>
     <string name="score_string">Score</string>
     <string name="confirm_player_button">Confirm</string>
-    <string name="confirm_player1_text">Enter player 1</string>
-    <string name="confirm_player2_text">Enter player 2</string>
+    <string name="confirm_player1_text">Enter player 0</string>
+    <string name="confirm_player2_text">Enter player 1</string>
     <string name="refresh_field">Refresh</string>
     <string name="start_new_game">New Game</string>
 </resources>

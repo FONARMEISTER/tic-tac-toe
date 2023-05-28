@@ -41,13 +41,13 @@
                 android:gravity="center">
 
                 <ImageButton
-                    android:id="@+id/Player1Avatar"
+                    android:id="@+id/Player0Avatar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/Player1EnterName"
+                    android:id="@+id/Player0EnterName"
                     android:layout_width="match_parent"
                     android:layout_height="77dp"
                     android:ems="10"
@@ -55,7 +55,7 @@
                     android:text="@string/confirm_player1_text" />
 
                 <Button
-                    android:id="@+id/Player1ConfirmButton"
+                    android:id="@+id/Player0ConfirmButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/confirm_player_button" />
@@ -69,13 +69,13 @@
                 android:gravity="center">
 
                 <ImageButton
-                    android:id="@+id/Player2Avatar"
+                    android:id="@+id/Player1Avatar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <EditText
-                    android:id="@+id/Player2EnterName"
+                    android:id="@+id/Player1EnterName"
                     android:layout_width="wrap_content"
                     android:layout_height="77dp"
                     android:ems="10"
@@ -83,7 +83,7 @@
                     android:text="@string/confirm_player2_text" />
 
                 <Button
-                    android:id="@+id/Player2ConfirmButton"
+                    android:id="@+id/Player1ConfirmButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/confirm_player_button" />
