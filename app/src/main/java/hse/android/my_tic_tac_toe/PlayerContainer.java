@@ -5,9 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PlayerContainer {
+
     public class Player {
         private String name;
         private int score;
+
+        public String getName() {
+            return name;
+        }
+
+        public Integer getScore() {
+            return score;
+        }
     }
 
     private final Player[] players;

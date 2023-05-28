@@ -11,8 +11,16 @@ public class FieldActivity extends AppCompatActivity {
 
     private final TicTacToe ticTacToe = new TicTacToe();
     private final Button[] buttons = new Button[9];
-    private ScoreContainer scoreContainer;
+    private final TextView[] playerText = new TextView[2];
+    private final TextView[] playerScore = new TextView[2];
     private PlayerContainer playerContainer;
+
+    private void updatePlayersInfo() {
+        playerText[0].setText(playerContainer.getPlayerName(0));
+        playerText[1].setText(playerContainer.getPlayerName(1));
+        playerScore[0].setText(playerContainer.getPlayerScore(0).toString());
+        playerScore[1].setText(playerContainer.getPlayerScore(1).toString());
+    }
 
     private void refreshField() {
         for (int i = 0; i < 9; ++i) {
@@ -38,19 +46,14 @@ public class FieldActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_field);
 
-        scoreContainer = ScoreContainer.ScoreContainerProvider.provide();
+        ScoreContainer scoreContainer = ScoreContainer.ScoreContainerProvider.provide();
         playerContainer = PlayerContainer.PlayerContainerProvider.provide();
         // Fetch nicknames & scores
-        TextView[] playerText = new TextView[2];
         playerText[0] = findViewById(R.id.Player0Name);
         playerText[1] = findViewById(R.id.Player1Name);
-        TextView[] playerScore = new TextView[2];
         playerScore[0] = findViewById(R.id.Player0Score);
         playerScore[1] = findViewById(R.id.Player1Score);
-        playerText[0].setText(playerContainer.getPlayerName(0));
-        playerText[1].setText(playerContainer.getPlayerName(1));
-        playerScore[0].setText(playerContainer.getPlayerScore(0).toString());
-        playerScore[1].setText(playerContainer.getPlayerScore(1).toString());
+        updatePlayersInfo();
 
         // Setup refresh button
         Button refreshButton = findViewById(R.id.refreshButton);
@@ -66,10 +69,7 @@ public class FieldActivity extends AppCompatActivity {
         newGameButton.setOnClickListener(v -> {
             scoreContainer.addResult(playerContainer.getPlayer(0), playerContainer.getPlayer(1));
             playerContainer.refreshScore();
-            playerText[0].setText(playerContainer.getPlayerName(0));
-            playerText[1].setText(playerContainer.getPlayerName(1));
-            playerScore[0].setText(playerContainer.getPlayerScore(0).toString());
-            playerScore[1].setText(playerContainer.getPlayerScore(1).toString());
+            updatePlayersInfo();
             ticTacToe.refresh();
             refreshField();
             refreshButton.setVisibility(View.INVISIBLE);
