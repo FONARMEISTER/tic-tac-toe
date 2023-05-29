@@ -1,19 +1,21 @@
 package hse.android.my_tic_tac_toe;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class FieldActivity extends AppCompatActivity {
-
-    private final TicTacToe ticTacToe = new TicTacToe();
     private final Button[] buttons = new Button[9];
     private final TextView[] playerText = new TextView[2];
     private final TextView[] playerScore = new TextView[2];
     private PlayerContainer playerContainer;
+
+    private TicTacToe ticTacToe = null;
 
     private void updatePlayersInfo() {
         playerText[0].setText(playerContainer.getPlayerName(0));
@@ -41,13 +43,23 @@ public class FieldActivity extends AppCompatActivity {
         }
     }
 
+    private void updateView() {
+        for (int i = 0; i < 9; ++i) {
+            String text = Character.toString(ticTacToe.getCellSymbol(i));
+            if (!text.equals(".")) buttons[i].setText(text);
+        }
+        updatePlayersInfo();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_field);
 
+        // Fetch singletones
         ScoreContainer scoreContainer = ScoreContainer.ScoreContainerProvider.provide();
         playerContainer = PlayerContainer.PlayerContainerProvider.provide();
+
         // Fetch nicknames & scores
         playerText[0] = findViewById(R.id.Player0Name);
         playerText[1] = findViewById(R.id.Player1Name);
@@ -105,5 +117,21 @@ public class FieldActivity extends AppCompatActivity {
                 }
             });
         }
+
+        // Fetch saved state
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (savedInstanceState != null) {
+                ticTacToe = savedInstanceState.getParcelable("tictactoe", TicTacToe.class);
+                updateView();
+            } else {
+                ticTacToe = new TicTacToe();
+            }
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("tictactoe", ticTacToe);
     }
 }

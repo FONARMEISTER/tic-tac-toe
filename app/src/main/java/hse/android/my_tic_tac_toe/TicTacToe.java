@@ -1,6 +1,20 @@
 package hse.android.my_tic_tac_toe;
 
-public class TicTacToe {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class TicTacToe implements Parcelable {
+
+    public static class TicTacToeProvider {
+        private static TicTacToe ticTacToe;
+
+        public static TicTacToe provide() {
+            if (ticTacToe == null) ticTacToe = new TicTacToe();
+            return ticTacToe;
+        }
+    }
 
     private final char[] cells = new char[9];
     private int currentPlayer;
@@ -9,6 +23,24 @@ public class TicTacToe {
     TicTacToe() {
         refresh();
     }
+
+    protected TicTacToe(Parcel in) {
+        in.readCharArray(cells);
+        currentPlayer = in.readInt();
+        emptyCells = in.readInt();
+    }
+
+    public static final Creator<TicTacToe> CREATOR = new Creator<TicTacToe>() {
+        @Override
+        public TicTacToe createFromParcel(Parcel in) {
+            return new TicTacToe(in);
+        }
+
+        @Override
+        public TicTacToe[] newArray(int size) {
+            return new TicTacToe[size];
+        }
+    };
 
     public void refresh() {
         currentPlayer = 0;
@@ -54,5 +86,21 @@ public class TicTacToe {
     public char getSymbol(int player) {
         if (player == 0) return 'X';
         return 'O';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeCharArray(cells);
+        dest.writeInt(currentPlayer);
+        dest.writeInt(emptyCells);
+    }
+
+    public char getCellSymbol(int cellNum){
+        return cells[cellNum];
     }
 }
